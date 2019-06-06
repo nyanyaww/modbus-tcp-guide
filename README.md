@@ -1,6 +1,16 @@
 # modbus-tcp-guide
 
-这是一份modbus-tcp的指导性说明文件，如果未来会有代码指导的话，我打算使用c语言作为指导语言
+这是一份modbus-tcp的指导性说明文件，如果未来会有代码指导的话，我打算使用c语言作为指导语言。
+
+首先是这次的作业要求：
+
+1.tcp/ip的server/client架构去接收与发送信息，收发的信息就是所谓的modbus协议封装的数据。
+
+2.实现modbus协议，注意这个modbus协议非常地特殊，并不是标准modbus协议，实际上它应该是modbus-rtu协议加上modbus-tcp头的协议，或者说是modbus-tcp加上crc校验的协议。
+
+3.要有用户交互界面。
+
+4.实现的语言设备不限，但是需要提供**2个**可执行程序，一个是Server，另一个是Client。
 
 ## 1. modbus的协议说明
 
@@ -224,6 +234,7 @@
 
 ```html
 上位机发送请求：
+
     char a，b，c，d
     String request = a + b + c + d;
 
@@ -234,6 +245,7 @@
 下位机发送应答：
     根据功能码封装应答 response
     发送
+
 上位机收到应答：
     收到 response
 ```
